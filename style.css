@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
+
+:root {
+    --clr-cyan-light: hsl(193, 38%, 86%);
+    --clr-neon-green: hsl(150, 100%, 66%);
+
+    --clr-neutral-grayish-blue: hsl(217, 19%, 38%);
+    --clr-neutral-grayish-blue-dark: hsl(217, 19%, 24%);
+    --clr-neutral-dark-blue: hsl(218, 23%, 16%);
+
+    --ff-body: 'Manrope', sans-serif;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img, picture {
+    max-width: 100%;
+    display: inline-block;
+}
+
+body {
+    background-color: var(--clr-neutral-dark-blue);
+    font-family: var(--ff-body);
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 90%;
+    width: 500px;
+    padding: 3.5em 1em;
+    background-color: var(--clr-neutral-grayish-blue-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    border-radius: .7rem;
+    position: relative;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--clr-neon-green);
+    font-size: .7rem;
+    letter-spacing: 3px;
+}
+
+.advice {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--clr-cyan-light);
+    line-height: 1.3;
+}
+
+.divider {
+    background-image: url('./images/pattern-divider-mobile.svg');
+    width: 100%;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.advice-btn {
+    position: absolute;
+    bottom: -30px;
+    padding: 1.5em;
+    border-radius: 50%;
+    background-color: var(--clr-neon-green);
+    display: grid;
+    place-items: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.attribution { 
+    color: var(--clr-cyan-light);
+    font-size: 11px; 
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.attribution a { color: var(--clr-neon-green) }
+
+/* Cancel all the focus and hover states for touch screens */
+@media (hover: hover) and (pointer: fine) {
+    .advice-btn:hover,
+    .advice-btn:focus {
+        box-shadow: -1px -1px 25px -7px var(--clr-neon-green), 1px 1px 25px -7px var(--clr-neon-green);
+    }
+}
+
+@media (min-width: 810px) {
+    .container {
+    padding: 4em 2.5em;
+    }
+
+    .divider {
+        background-image: url('./images/pattern-divider-desktop.svg');
+    }
+
+}
